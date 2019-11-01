@@ -1,0 +1,2 @@
+- name: Install Basic Packages
+  apt: pkg={{ basic_packages }} state=latest

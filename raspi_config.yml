@@ -1,0 +1,13 @@
+---
+- hosts: raspi_cluster
+  remote_user: "{{ raspi_user }}"
+  become: yes
+  tasks:
+    - import_role:
+        name: secure_sshd
+    - import_role:
+        name: remove_default_user
+    - import_role:
+        name: apt_upgrade
+    - import_role:
+        name: install_basics
