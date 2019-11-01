@@ -11,3 +11,5 @@
         name: apt_upgrade
     - import_role:
         name: install_basics
+    - import_role:
+        name: dotfiles

@@ -14,3 +14,4 @@
   become: yes
   command: "raspi-config nonint do_hostname {{ raspi_hostname }}"
   when: ansible_hostname != raspi_hostname
+  notify: Reboot Host
