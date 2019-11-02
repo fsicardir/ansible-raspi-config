@@ -30,7 +30,8 @@
         user: "{{ raspi_user }}"
         state: present
         key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
-    - lineinfile:
+    - name: allow passwordless sudo
+      lineinfile:
         path: /etc/sudoers
         state: present
         regexp: '^%sudo'

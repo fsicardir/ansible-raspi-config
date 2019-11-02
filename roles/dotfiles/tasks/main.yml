@@ -2,11 +2,8 @@
 - name: Get dotfiles
   git:
     repo: https://github.com/fsicardir/Dotfiles.git
-    dest: ~/Dotfiles
-  register: updated_dotfiles
+    dest: "/home/{{ raspi_user }}/Dotfiles"
 - name: Run config script
-  command: ~/Dotfiles/update_local_config.sh
+  shell: "/home/{{ raspi_user }}/Dotfiles/update_local_config.sh"
   args:
-    chdir: ~/Dotfiles
-  when: updated_dotfiles.changed
-  notify: Reboot host
+    chdir: "/home/{{ raspi_user }}/Dotfiles"
