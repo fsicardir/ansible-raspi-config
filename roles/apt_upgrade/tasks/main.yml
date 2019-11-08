@@ -3,6 +3,7 @@
   apt:
     name: "*"
     force_apt_get: yes
+    update_cache: yes
     state: latest
 - name: Remove useless packages from the cache
   become: yes
